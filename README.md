@@ -1,7 +1,7 @@
 # ProPlayerProfiler
 
 ## Project Overview
-SportStatSorter is a Python-based project focused on the processing and analysis of sports player data. This project demonstrates fundamental data manipulation techniques using Python, ideal for those in the early stages of learning programming. Key components of the project include:
+Pro Player Profiler is a Python-based project focused on the processing and analysis of sports player data. This project demonstrates fundamental data manipulation techniques using Python, ideal for those in the early stages of learning programming. Key components of the project include:
 
 1. **Filtering Algorithm**: Filters player data based on specified criteria.
 2. **Aggregating Algorithm**: Aggregates player data to calculate averages based on specified keys.
