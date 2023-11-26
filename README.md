@@ -11,7 +11,7 @@ SportStatSorter is a Python-based project focused on the processing and analysis
 
 Ensure Python is installed on your machine. Clone this repository to your local machine using:
 
-git clone [https://github.com/siracsimsek01/ProPlayerProfiler]
+git clone https://github.com/siracsimsek01/ProPlayerProfiler
 
 
 ## Usage
