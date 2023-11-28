@@ -3,10 +3,7 @@ from players import players
 # Function to sort the list by anything in ascending or descending order
 
 def sorting_players(players, sort_key):
-    """
-    Sorts a list of players based on a specified key using built-in sorted function.
-    Returns a list of player names and surnames in the sorted order.
-    """
+
     # Sorting players using the sorted function and a custom sorting key
     sorted_players = sorted(players, key=lambda player: player[sort_key])
 
