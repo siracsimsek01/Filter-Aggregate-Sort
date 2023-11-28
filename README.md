@@ -1,29 +1,34 @@
-# ProPlayerProfiler
+#  Filter, Aggregate, Sort
 
-## Project Overview
-Pro Player Profiler is a Python-based project focused on the processing and analysis of sports player data. This project demonstrates fundamental data manipulation techniques using Python, ideal for those in the early stages of learning programming. Key components of the project include:
+ Filter, Aggregate, Sort is a Python-based tool designed to perform three key operations on datasets: filtering, aggregating, and sorting. This utility is especially useful in processing and analyzing structured data, such as in data science projects, database management, or any application where dataset manipulation is required.
 
-1. **Filtering Algorithm**: Filters player data based on specified criteria.
-2. **Aggregating Algorithm**: Aggregates player data to calculate averages based on specified keys.
-3. **Sorting Algorithm**: Sorts player data based on any given key in ascending order.
+## Features
+
+- **Filter Data**: Selects and displays data based on specified criteria.
+- **Aggregate Data**: Calculates averages or sums based on specific keys within the data.
+- **Sort Data**: Organizes data in ascending order based on a chosen key.
 
 ## Installation
 
-Ensure Python is installed on your machine. Clone this repository to your local machine using:
-
-git clone https://github.com/siracsimsek01/ProPlayerProfiler
-
+No installation required. Ensure you have Python installed on your system to run the scripts.
 
 ## Usage
 
-### Filtering Algorithm
-To filter player data based on a specific key-value pair:
+To use DataOps, follow these steps:
+
+1. Prepare your dataset in a Python list of dictionaries format.
+2. Run `main.py`.
+3. Choose the desired operation (Filter, Aggregate, Sort) by entering 1, 2, or 3.
+4. Provide the necessary inputs as prompted.
+5. View the processed results in the console.
+
+### Example Dataset
+
+Your dataset should be structured as a list of dictionaries. Each dictionary represents a data record. For example:
 
 ```python
-filtered_players = filter_players(players, 'country', 'USA')
-
-average_overall_by_key = average_overall_by_key(players, 'age')
-
-sorted_players = sorting_players(players, 'age')
-
-
+dataset = [
+    {"name": "John Doe", "age": 30, "occupation": "Engineer"},
+    {"name": "Jane Smith", "age": 25, "occupation": "Designer"},
+    # Add more records as needed
+]
