@@ -1,4 +1,4 @@
-#  Filter, Aggregate, Sort
+# DataOps: Filter, Aggregate, Sort
 
  Filter, Aggregate, Sort is a Python-based tool designed to perform three key operations on datasets: filtering, aggregating, and sorting. This utility is especially useful in processing and analyzing structured data, such as in data science projects, database management, or any application where dataset manipulation is required.
 
