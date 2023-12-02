@@ -39,74 +39,81 @@ def filter_data(data_list, key, value):
     return filtered_list
 
 # Aggregating function
-def calculate_average(data, key, given):
-    # initialize empty dictionaries
-    totals = {}
-    counts = {}
-    # iterate over each item in the data
+def calculate_average(data, key):
+    
+    # initialize total and count variables
+    total = 0
+    count = 0
+
+# loop through the data and add the values to the total and increment the count
     for item in data:
-        # get the value of the key and the given key
-        key_value = item[key]
-        given_value = item[given]
-        
-        if key_value in totals:
-            totals[key_value] += given_value
-            counts[key_value] += 1
-        else:
-            totals[key_value] = given_value
-            counts[key_value] = 1
-        # define the dictionary and key value
-    averages = {k: totals[k] / counts[k] for k in totals}
-        # calculate the average score
-    return averages
+        if key in item:
+            total += item[key]
+            count += 1
+
+    # calculate the average
+    if count > 0:
+        average = total / count
+    else:
+        average = 0
+
+    return average
+
 
 # Sorting function 
 def sort_data(data, sort_key):
     def custom_key(item):
         return item[sort_key]
+    # Using the sorted function with the custom key 
     sorted_data = sorted(data, key=custom_key)
+    
+    # Excluding sorted names and surnames from the list
     sorted_names = []
     for item in sorted_data:
         name_string = f"{item['name'], item['surname']}"
         if sort_key not in ['name']:
             name_string += f" {item[sort_key]}"
         sorted_names.append(name_string)
+        #Returning the new list
     return sorted_names
 
 # Main function
 def main():
-    print("Choose an operation: \n1. Filter \n2. Sort \n3. Aggregate")
-    choice = input("Enter your choice (1, 2, or 3): ")
+    while True:
+        print("Choose an operation: \n1. Filter \n2. Sort \n3. Aggregate")
+        choice = input("Enter your choice (1, 2, or 3): ")
 
-    if choice == '1':
-        # Filtering
-        key = input("Enter the filter key: ")
-        value = input("Enter the filter value: ")
-        result = filter_data(dataset, key, value)
-        print("Filtered Data:")
-        for item in result:
-            print(item)
+        if choice == '1':
+            # Filtering
+            key = input("Enter the filter key: ")
+            value = input("Enter the filter value: ")
+            result = filter_data(dataset, key, value)
+            print("Filtered Data:")
+            for item in result:
+                print(item)
 
-    elif choice == '2':
-        # Sorting
-        sort_key = input("Enter the sort key: ")
-        result = sort_data(dataset, sort_key)
-        print("Sorted Data:")
-        for item in result:
-            print(item)
+        elif choice == '2':
+            # Sorting
+            sort_key = input("Enter the sort key: ")
+            result = sort_data(dataset, sort_key)
+            print("Sorted Data:")
+            for item in result:
+                print(item)
 
-    elif choice == '3':
-        # Aggregating
-        key = input("Enter the first key for aggregation: ")
-        given = input("Enter the second key: ")
-        result = calculate_average(dataset, key, given)
-        print("Average Values:")
-        for k, v in result.items():
-            print(f"{k}: {v}")
+        elif choice == '3':
+            # Aggregating
+            key = input("Enter the key for average calculation (e.g., age): ")
+            average_value = calculate_average(dataset, key)
+            print(f"Average {key.capitalize()}: {average_value}")
 
-    else:
-        print("Invalid choice.")
 
+        else:
+            print("Invalid choice.")
+
+        another_operation = input("Do you want to perform another operation? (yes/no): ")
+        if another_operation.lower() != "yes":
+            print("Thank you for using the program 😇. To use it again, run 'python3 main.py' on the terminal.")
+            break
 # Call the main function
 if __name__ == "__main__":
     main()
